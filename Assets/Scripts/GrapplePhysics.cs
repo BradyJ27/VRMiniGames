@@ -7,6 +7,7 @@ public class GrapplePhysics : MonoBehaviour
     //public GameObject hand;
     private GameObject hand;
     private Vector3 handStartPos;
+    public Transform camera;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,13 @@ public class GrapplePhysics : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Ray raycast = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward, Color.green);
+        Ray raycast = new Ray(camera.position, camera.forward);
+        Debug.DrawRay(camera.position, camera.forward, Color.green);
         if (Physics.Raycast(raycast, out hit))
         {
             Debug.Log("hit");
+            //Debug.Log(transform.position);
+            
         }
     }
 }
