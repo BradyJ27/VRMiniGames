@@ -23,6 +23,10 @@ public class GrapplingGun : MonoBehaviour
 
 	void Update()
 	{
+		lr.SetColors(Color.black, Color.black);
+		lr.SetPosition(0, transform.position);
+		lr.SetPosition(1, transform.position);
+	
 		if (grabPinch.GetStateDown(thisHand))
 		{
 			Debug.Log("PINCH");
