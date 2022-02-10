@@ -25,7 +25,7 @@ public class GrapplingGun : MonoBehaviour
 	{
 		lr.SetColors(Color.black, Color.black);
 		lr.SetPosition(0, transform.position);
-		lr.SetPosition(1, transform.position);
+		lr.SetPosition(1, transform.forward * 100f);
 	
 		if (grabPinch.GetStateDown(thisHand))
 		{
@@ -63,9 +63,9 @@ public class GrapplingGun : MonoBehaviour
 			joint.minDistance = distanceFromPoint * 0.25f;
 
 			//Adjust these values to fit your game.
-			joint.spring = 4.5f;
-			joint.damper = 7f;
-			joint.massScale = 4.5f;
+			joint.spring = 25f;
+			joint.damper = 1f;
+			joint.massScale = 3f;
 
 			lr.positionCount = 2;
 			currentGrapplePosition = transform.position;
@@ -74,7 +74,7 @@ public class GrapplingGun : MonoBehaviour
 
 	void StopGrapple()
 	{
-		lr.positionCount = 0;
+		//lr.positionCount = 0;
 		Destroy(joint);
 	}
 
