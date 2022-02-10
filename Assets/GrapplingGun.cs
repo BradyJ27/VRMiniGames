@@ -84,6 +84,7 @@ public class GrapplingGun : MonoBehaviour
 	{
 		//If not grappling, don't draw rope
 		if (!joint) return;
+		lr.SetColors(Color.green, Color.green);
 
 		currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
