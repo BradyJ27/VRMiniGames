@@ -17,17 +17,12 @@ public class GenerateLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.z >= zPos - 25)
+        if(transform.position.z >= zPos - 100)
 		{
             zPos += 50;
             tunnel = Instantiate(tunnel, new Vector3(0, 0, zPos), Quaternion.identity);
             tunnel.gameObject.name = "Tunnel";
             Instantiate(collectable, new Vector3(0, 5, zPos), Quaternion.identity);
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        Destroy(other.gameObject.transform.parent.gameObject);
     }
 }
