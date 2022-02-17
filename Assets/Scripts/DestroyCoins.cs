@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyTunnel : MonoBehaviour
+public class DestroyCoins : MonoBehaviour
 {
     public GameObject player;
 
