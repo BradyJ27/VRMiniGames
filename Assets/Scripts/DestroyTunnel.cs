@@ -19,7 +19,7 @@ public class DestroyTunnel : MonoBehaviour
     void Update()
     {
         playerZPos = player.transform.position.z;
-        if (playerZPos >= tunnelZPos + 10f)
+        if (playerZPos >= tunnelZPos + 180f)
         {
             Destroy(gameObject);
         }
