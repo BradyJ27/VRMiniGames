@@ -8,7 +8,7 @@ public class GrapplingGun : MonoBehaviour
 
 	private LineRenderer lr;
 	private Vector3 grapplePoint;
-	private float maxDistance = 50f;
+	private float maxDistance = 100f;
 	private SpringJoint joint;
 
 	public LayerMask whatIsGrappleable;
@@ -25,7 +25,7 @@ public class GrapplingGun : MonoBehaviour
 	{
 		lr.SetColors(Color.black, Color.black);
 		lr.SetPosition(0, transform.position);
-		lr.SetPosition(1, transform.position + transform.forward * 10f);
+		lr.SetPosition(1, transform.position + transform.forward * 50f);
 	
 		if (grabPinch.GetStateDown(thisHand))
 		{
@@ -56,11 +56,11 @@ public class GrapplingGun : MonoBehaviour
 			float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
 
 			//The distance grapple will try to keep from grapple point. 
-			joint.maxDistance = distanceFromPoint * 0.4f;
-			joint.minDistance = distanceFromPoint * 0.075f;
+			joint.maxDistance = distanceFromPoint * 0.2f;
+			joint.minDistance = distanceFromPoint * 0.05f;
 
 			//Adjust these values to fit your game.
-			joint.spring = 5f;
+			joint.spring = 2f;
 			joint.damper = 5f;
 			joint.massScale = 5f;
 
